@@ -3,10 +3,7 @@ layout: default
 title: Home
 ---
 
-# AI-Assisted Mathematical Modeling of Patents and Development of Automated Patent Search System
-
 🚧👷‍♂️ Work in Progress
 
-![System Diagram](assets/system-overview.png)
-
+<img src="assets/system-overview.png" alt="System Diagram" style="width: 400px;">
 
