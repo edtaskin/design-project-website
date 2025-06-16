@@ -7,3 +7,6 @@ title: Home
 
 <img src="assets/system-overview.png" alt="System Diagram" style="width: 60%;">
 
+### Motivation
+
+blablabal
