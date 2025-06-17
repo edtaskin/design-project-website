@@ -1,8 +1,3 @@
----
-layout: default
-title: Home
----
-
 <img src="assets/system-overview.png" alt="System Diagram" style="width: 60%;">
 
 ## Project Information
@@ -65,7 +60,7 @@ Patent figures were extracted and passed through **OpenAI’s CLIP** to produce 
 
 <div style="width:100%; height:600px; margin: 1em 0;">
   <iframe
-    src="assets/480_poster (5).pdf"
+    src="assets/480_poster.pdf"
     width="100%"
     height="100%"
     style="border:1px solid #ccc;"
