@@ -63,6 +63,14 @@ Patent figures were extracted and passed through **OpenAI’s CLIP** to produce 
 
 ## Poster
 
-To include the poster on your website as a PDF, add the following link (ensure `poster.pdf` is in your assets/static folder):
-
-\[▶ Download Poster (PDF)\](poster.pdf)
+<div style="width:100%; height:600px; margin: 1em 0;">
+  <iframe
+    src="assets/480_poster (5).pdf"
+    width="100%"
+    height="100%"
+    style="border:1px solid #ccc;"
+    title="Project Poster PDF">
+    Your browser does not support embedded PDFs.
+    <a href="/poster.pdf">Download the PDF</a>.
+  </iframe>
+</div>
