@@ -26,22 +26,22 @@ Together, these components deliver a **precision of 87%** and **recall of 82%** 
 3. Integrate visual and text modalities for richer search experiences  
 
 ### Methodology
-- **Data Collection  
+- **Data Collection**  
 A corpus of **15 000 English-language** and **5 000 Turkish-language** patents (filed between 2010 and 2023) was assembled. Metadata (titles, abstracts, claims) and full-text PDFs were sourced via public patent offices and curated for redundancy. This bilingual dataset ensures robust evaluation across both global and local (Turkish) contexts.
 
-- **Preprocessing  
+- **Preprocessing**  
 All PDF documents underwent **OCR cleaning** to correct recognition errors and remove artifacts. Metadata fields were **normalized** (e.g., date formats, inventor names) and standardized. Sentence-Transformers were then used to generate **768-dimensional embeddings** for each abstract and claim, producing a unified vector representation for semantic search.
 
-- **Indexing  
+- **Indexing**  
 Two complementary indices were built:  
 - An **Elasticsearch BM25 index** for fast lexical retrieval and relevance scoring.  
 - A **FAISS vector index** (IVF-PQ) for approximate nearest-neighbor search over the embedding space.  
 At query time, results from both indices are merged via a weighted fusion algorithm.
 
-- **Classification  
+- **Classification**  
 A **RoBERTa transformer** was fine-tuned on **100 000** manually labeled patent abstracts to predict Cooperative Patent Classification (CPC) codes. The classifier achieves **92% top-3 accuracy**, enabling users to restrict searches to specific technological fields (e.g., A—“Human Necessities,” B—“Operations & Transport”).
 
-- **Visual Search  
+- **Visual Search**  
 Patent figures were extracted and passed through **OpenAI’s CLIP** to produce image embeddings. At search time, user-supplied diagrams are encoded and compared against this gallery, allowing retrieval of patents with visually similar figures (e.g., mechanical drawings, flowcharts).
 
 ### Key Findings
