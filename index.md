@@ -27,22 +27,19 @@ Together, these components deliver a **precision of 87%** and **recall of 82%** 
 
 ### Methodology
 - **Data Collection**  
-A corpus of **15 000 English-language** and **5 000 Turkish-language** patents (filed between 2010 and 2023) was assembled. Metadata (titles, abstracts, claims) and full-text PDFs were sourced via public patent offices and curated for redundancy. This bilingual dataset ensures robust evaluation across both global and local (Turkish) contexts.
+The patent corpus was assembled in collaboration with TUSAŞ, with a large portion of records provided directly by the company. Consequently, the dataset is heavily weighted toward aerospace and defense–related patents.
 
 - **Preprocessing**  
-All PDF documents underwent **OCR cleaning** to correct recognition errors and remove artifacts. Metadata fields were **normalized** (e.g., date formats, inventor names) and standardized. Sentence-Transformers were then used to generate **768-dimensional embeddings** for each abstract and claim, producing a unified vector representation for semantic search.
+Since BERT-based models (e.g., PatentSBERTa) were used downstream, traditional text-cleaning steps like stop-word removal or punctuation stripping were unnecessary. Preprocessing was therefore limited to identifying and removing corrupted or incomplete records.
 
 - **Indexing**  
-Two complementary indices were built:  
-- An **Elasticsearch BM25 index** for fast lexical retrieval and relevance scoring.  
-- A **FAISS vector index** (IVF-PQ) for approximate nearest-neighbor search over the embedding space.  
-At query time, results from both indices are merged via a weighted fusion algorithm.
+Each patent’s title, abstract, and claims were converted into sentence embeddings via PatentSBERTa. These 768-dimensional vectors were then indexed in Elasticsearch to enable semantic (vector) searches alongside standard keyword lookups.
 
 - **Classification**  
-A **RoBERTa transformer** was fine-tuned on **100 000** manually labeled patent abstracts to predict Cooperative Patent Classification (CPC) codes. The classifier achieves **92% top-3 accuracy**, enabling users to restrict searches to specific technological fields (e.g., A—“Human Necessities,” B—“Operations & Transport”).
+A BERT-based classifier was trained to predict CPC subclasses, enabling automatic filtering and re-ranking of search results. Three model variants (single-layer, multi-task, and hierarchical-loss) were compared, and their predictions were combined in an ensemble “voting” mechanism to boost accuracy. 
 
 - **Visual Search**  
-Patent figures were extracted and passed through **OpenAI’s CLIP** to produce image embeddings. At search time, user-supplied diagrams are encoded and compared against this gallery, allowing retrieval of patents with visually similar figures (e.g., mechanical drawings, flowcharts).
+For multimodal support, patent figures were extracted and passed through a pre-trained CLIP model to generate image embeddings. At query time, user-supplied diagrams are encoded and matched against this gallery, allowing retrieval of patents with visually similar illustrations.
 
 ### Key Findings
 - **Semantic expansion** increased recall by 12% over BM25 alone  
