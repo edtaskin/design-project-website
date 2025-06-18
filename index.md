@@ -71,7 +71,7 @@ For multimodal support, patent figures were extracted and passed through a pre-t
 
 <div style="max-width:800px; margin:1em auto;">
   <video controls width="100%">
-    <source src="/assets/demo.mp4" type="video/mp4">
+    <source src="assets/demo.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
