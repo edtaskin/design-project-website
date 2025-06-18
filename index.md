@@ -1,3 +1,4 @@
+## AI-Assisted Mathematical Modeling of Patents and Development of Automated Patent Search System
 <img src="assets/system-overview.png" alt="System Diagram" style="width: 60%;">
 
 ## Project Information
