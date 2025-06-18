@@ -2,6 +2,24 @@
 
 ## Project Information
 
+### Advisors
+- **Academic Advisor**: Prof. Dr. Pınar Duygulu Şahin
+- **Industry Advisor**: Özcan Somuncu 
+### Project Members
+- Emre Doruk Taşkın
+- Ferayenur Bozkurt
+- Baran Kılıç
+- Ulaş Geçin
+
+### Course Code
+- **BBM480**
+
+### Objectives
+1. Accelerate patent prior-art search for aerospace engineers  
+2. Enable natural-language based search
+2. Improve retrieval accuracy by applying techniques like Query Expansion and CPC Re-ranking   
+3. Integrate visual and text modalities for richer search experiences  
+
 ### Project Description
 A hybrid patent‐search system was developed that combines:
 - **Semantic Query Expansion**  
@@ -16,15 +34,6 @@ A hybrid patent‐search system was developed that combines:
   Processes user-supplied images (diagrams, drawings) through OpenAI’s CLIP model to generate image embeddings in a shared embedding space between texts and images. This enables multimodal search without storing images and diagrams for individual patents.
 
 Together, these components deliver a highly-accurate patent search system that reduces manual query crafting and filtering, significantly streamlining patent search processes.
-
-### Course Code
-- **BBM480**
-
-### Objectives
-1. Accelerate patent prior-art search for aerospace engineers  
-2. Enable natural-language based search
-2. Improve retrieval accuracy by applying techniques like Query Expansion and CPC Re-ranking   
-3. Integrate visual and text modalities for richer search experiences  
 
 ### Methodology
 - **Data Collection**  
