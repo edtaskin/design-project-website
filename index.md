@@ -43,7 +43,7 @@ A BERT-based classifier was trained to predict CPC subclasses, enabling automati
 For multimodal support, patent figures were extracted and passed through a pre-trained CLIP model to generate image embeddings. At query time, user-supplied diagrams are encoded and matched against this gallery, allowing retrieval of patents with visually similar illustrations.
 
 ### Key Findings
-- Hybrid search consisting of semantic similarity and BM25 caused significant increase in the rankings of relevant patents in the search queries, with 98% Hit@1 rate for the most relevant patent, compared to the 55% Hit@1 rate for a baseline semantic search system.
+- Hybrid search consisting of semantic similarity and BM25 caused significant increase in the rankings of relevant patents in the search queries, with **98% Hit@1** rate for the most relevant patent, compared to the 55% Hit@1 rate for a baseline semantic search system.
 - Query Expansion reduced the need for careful query crafting for the users by producing high-quality and context-aware query expansions thanks to powerful prompting techniques such as Pseudo-Relevance Feedback (PRF).
 - Relatively large LLMs were able to run locally thanks to highly optimized LLM-inference library **Llama.cpp** and local LLM server **LM Studio**.
 
